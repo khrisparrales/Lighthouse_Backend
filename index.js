@@ -16,7 +16,10 @@ mongoose
     .catch(() => {
         console.log("Connect to mongodb faill");
     });
+//middlewares
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 //listen server express
 app.listen(PORT, () => {
     console.log("Server started on PORT: ", PORT);
