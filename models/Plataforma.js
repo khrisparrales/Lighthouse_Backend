@@ -11,6 +11,8 @@ const Plataformaschema = new mongoose.Schema({
     Cursos: {
         type: ["String"],
     },
+}, {
+    versionKey: false
 });
 
-module.exports = new mongoose.model('Plataforma', Plataformaschema);
+module.exports = new mongoose.model('Plataformas', Plataformaschema);
