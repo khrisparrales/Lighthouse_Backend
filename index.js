@@ -8,7 +8,7 @@ require('dotenv').config();
 //connect to mongodb
 mongoose
     .connect(
-        process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }
+        process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 
     )
     .then(() => {
@@ -22,7 +22,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //routes
-app.use('/api/Pla', routePlataforma);
+app.use('/api/Plataformas', routePlataforma);
 //listen server express
 app.listen(PORT, () => {
     console.log("Server started on PORT: ", PORT);
