@@ -3,10 +3,11 @@ const app = express();
 const PORT = process.env.PORT || 3009;
 const mongoose = require("mongoose");
 
+require('dotenv').config();
 //connect to mongodb
 mongoose
     .connect(
-        "mongodb+srv://admin:superadmin@cluster0.d2xlq.mongodb.net/Lighthouse?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }
+        process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }
 
     )
     .then(() => {
